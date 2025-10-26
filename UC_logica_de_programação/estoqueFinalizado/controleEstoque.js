@@ -5,7 +5,7 @@ let estoque = parseInt(readline.question("Informe a quantidade de doces no estoq
 
 while (true) {
     console.log("\n1 - Chegada de doces(ENTRADA)");
-    console.log("\n1 - Vendas de doces(SAIDA)");
+    console.log("2 - Vendas de doces(SAIDA)");
 
     let operacao = parseInt(readline.question("\nInforme o tipo de operação: "))
     
@@ -24,16 +24,18 @@ while (true) {
     if (operacao === 1) {
         estoque += quantidade;
     } else if ( quantidade > estoque){
-        console.log("Saldo insulficiente!");
+        console.log("Saldo insulficiente! Tente novamente:");
+        continue;
     } else {
         estoque -= quantidade
     }
 
     console.log(`Saldo atualizado para ${estoque} doces`)
 
-    let continuar = String(readline.question("Deseja continuar? (s/n): ").toLowerCase());
+    let continuar = String(readline.question("Deseja encerrar? (s/n): ").toLowerCase());
     
-    if (continuar !== "s") {
+    
+    if (continuar !== "n") {
         console.log("Sistema encerrado!!");
         break;
     }
