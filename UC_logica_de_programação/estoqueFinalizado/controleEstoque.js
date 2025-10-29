@@ -32,7 +32,7 @@ while (true) {
 
     console.log(`Saldo atualizado para ${estoque} doces`)
 
-    let continuar = String(readline.question("Deseja encerrar? (s/n): ").toLowerCase());
+    let continuar = readline.question("Deseja encerrar? (s/n): ").toLowerCase();
     
     
     if (continuar !== "n") {
